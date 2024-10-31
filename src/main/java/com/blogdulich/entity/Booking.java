@@ -1,5 +1,5 @@
 package com.blogdulich.entity;
 
-public class staff {
+public class Booking {
 
 }
