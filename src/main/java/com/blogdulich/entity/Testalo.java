@@ -1,5 +1,5 @@
 package com.blogdulich.entity;
 
-public class test {
+public class Testalo {
 
 }
