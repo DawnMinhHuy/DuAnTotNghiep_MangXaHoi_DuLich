@@ -44,7 +44,7 @@ public class Account {
 	String email;
 	@Size(min = 8, max = 16, message = "Mật khẩu phải từ 8 đến 16 ký tự")
 	String password;
-	@NotBlank(message = "Số điện thoại không được để trống")
+	@NotBlank(message = "Số điện thoại nhập là 10 số")
 	String phone;
 	@NotNull(message = "Ngày sinh không được để trống")
 	Date birthday;
