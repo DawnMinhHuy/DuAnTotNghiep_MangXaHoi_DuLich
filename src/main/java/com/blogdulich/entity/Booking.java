@@ -1,5 +1,18 @@
 package com.blogdulich.entity;
-import javax.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 @Entity
@@ -33,14 +46,15 @@ public class Booking{
     @JoinColumn(name = "Tours_id", referencedColumnName = "Tours_id")
     private Tours tours;
     
-    @JoinColumn(name = "User_id", referencedColumnName = "User_id")
-    private User user;
-    
-    @JoinColumn(name = "Payment_id", referencedColumnName = "Payment_id")
-    private Payment payment;
-    
-    @JoinColumn(name = "PersonBooking_id", referencedColumnName = "PersonBooking_id")
-    private PersonBooking personbooking;
-    
-    @JoinColumn(name = "Schedule_id", referencedColumnName = "Schedule_id")
-    private Schedule schedule;
+//    @JoinColumn(name = "User_id", referencedColumnName = "User_id")
+//    private User user;
+//    
+//    @JoinColumn(name = "Payment_id", referencedColumnName = "Payment_id")
+//    private Payment payment;
+//    
+//    @JoinColumn(name = "PersonBooking_id", referencedColumnName = "PersonBooking_id")
+//    private PersonBooking personbooking;
+//    
+//    @JoinColumn(name = "Schedule_id", referencedColumnName = "Schedule_id")
+//    private Schedule schedule;
+}
