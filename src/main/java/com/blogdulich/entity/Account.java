@@ -50,7 +50,7 @@ public class Account {
 	Date birthday;
 	@NotBlank(message = "Địa chỉ không được để trống")
 	String address;
-	@NotBlank(message = "Ảnh đại diện không được để trống")
+	@NotBlank(message = "Ảnh đại diện được để trống")
 	String avatar;
 	@Enumerated(EnumType.ORDINAL)
 	Role role = Role.User;
