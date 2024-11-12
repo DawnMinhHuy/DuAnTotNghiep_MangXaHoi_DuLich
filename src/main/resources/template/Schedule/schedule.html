@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Schedule Management</title>
+    <link rel="stylesheet" href="stylist.css">
+    <link href="dist/index.global.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sidebar for Navigation -->
+    <div id="sidebar-placeholder"></div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Header -->
+        <header>
+            <h1>Schedule Management</h1>
+            <p>Welcome, Admin! Manage your events here.</p>
+        </header>
+
+        <!-- Calendar Section -->
+        <section id="calendar-section">
+            <h2>Calendar</h2>
+            <div id="calendar"></div>
+        </section>
+
+        <!-- Event Form Section -->
+        <section id="event-form-section">
+            <h2>Add/Edit Event</h2>
+            <form id="event-form">
+                <label for="event-title">Event Title:</label>
+                <input type="text" id="event-title" name="event-title" required>
+
+                <label for="event-description">Event Description:</label>
+                <textarea id="event-description" name="event-description" rows="4"></textarea>
+
+                <label for="start-date">Start Date & Time:</label>
+                <input type="datetime-local" id="start-date" name="start-date" required>
+
+                <label for="end-date">End Date & Time:</label>
+                <input type="datetime-local" id="end-date" name="end-date" required>
+
+                <button type="submit">Save Event</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- FullCalendar Initialization Script -->
+    <script src="dist/index.global.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: [],
+                eventClick: function(info) {
+                    if (confirm(`Do you want to delete the event "${info.event.title}"?`)) {
+                        info.event.remove();
+                    }
+                },
+                dateClick: function(info) {
+                    document.getElementById('start-date').value = info.dateStr;
+                    document.getElementById('end-date').value = info.dateStr;
+                }
+            });
+            calendar.render();
+
+            function addRandomEvent() {
+                var futureDate = new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000));
+                var randomEvent = {
+                    title: "Random Event",
+                    start: futureDate.toISOString(),
+                    end: new Date(futureDate.getTime() + (60 * 60 * 1000)).toISOString(),
+                    description: "This is a random event!"
+                };
+                calendar.addEvent(randomEvent);
+            }
+            addRandomEvent();
+
+            document.getElementById('event-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var title = document.getElementById('event-title').value;
+                var description = document.getElementById('event-description').value;
+                var startDate = document.getElementById('start-date').value;
+                var endDate = document.getElementById('end-date').value;
+
+                calendar.addEvent({ title: title, start: startDate, end: endDate, description: description });
+                document.getElementById('event-form').reset();
+            });
+        });
+    </script>
+
+    <!-- Load Sidebar HTML and Enable Dropdown Functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("sidebar.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("sidebar-placeholder").innerHTML = data;
+
+                    // Apply dropdown toggle functionality after sidebar is loaded
+                    document.querySelectorAll(".dropdown-toggle").forEach(function (toggle) {
+                        toggle.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            const dropdown = this.parentElement;
+                            dropdown.classList.toggle("active");
+                        });
+                    });
+                })
+                .catch(error => console.error("Error loading sidebar:", error));
+        });
+    </script>
+
+    <!-- Optional: Include additional sidebar script if needed -->
+    <script src="sidebar.js"></script>
+</body>
+</html>

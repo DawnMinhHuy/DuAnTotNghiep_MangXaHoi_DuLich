@@ -1,0 +1,208 @@
+/* Resetting margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #200c0c;
+    position: fixed;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar Header */
+.sidebar h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #928282;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    margin-left: 15px;
+    padding-left: 10px;
+    background-color: #e0e7ff; /* Light background for dropdown */
+    border-left: 2px solid #007bff;
+}
+
+.dropdown-menu li a {
+    color: #666;
+    font-size: 0.9em;
+    padding: 5px 10px;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block; /* Show dropdown when active */
+}
+
+/* Dropdown Toggle Styling */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Add arrow icon to dropdown */
+.dropdown-toggle::after {
+    content: "▼"; /* Use any arrow icon you prefer */
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s; /* Smooth rotation */
+}
+
+.dropdown.active .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+/* Hold hover color when dropdown is active */
+.dropdown.active .dropdown-toggle {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+
+
+/* Logout Link */
+.logout {
+    color: #f00;
+    font-weight: bold;
+}
+
+
+/* Main Content Area */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header p {
+    font-size: 14px;
+    color: #555;
+}
+
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 600px;
+    background-color: #f3f4f6; /* Light background for calendar */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* FullCalendar Event Styling */
+.fc-event {
+    background-color: #4caf50; /* Custom color for events */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.fc-event:hover {
+    background-color: #45a049; /* Darker on hover */
+}
+
+/* Calendar Header Styling */
+.fc-toolbar-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.fc-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.fc-button:hover {
+    background-color: #555;
+}
+
+.fc-button-primary {
+    background-color: #4caf50;
+}
+
+.fc-button-primary:hover {
+    background-color: #45a049;
+}
+
+
+/* Event Form Section */
+#event-form-section {
+    margin-top: 20px;
+}
+
+#event-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#event-form input,
+#event-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#event-form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#event-form button:hover {
+    background-color: #555;
+}
