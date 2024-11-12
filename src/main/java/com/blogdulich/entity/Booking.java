@@ -19,29 +19,31 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Bookings")
+@Table(name = "Booking")
 public class Booking{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Booking_ID")
-    private Long bookingId;
+    private String bookingid;
 
-    @Column(name = "Created_By")
-    private String createdBy;
+    @Column(name = "User_ID")
+    private String userid;
+    
+    @Column(name = "Tour_ID")
+    private String tourid;
 
     @Column(name = "Create_Date")
     @Temporal(TemporalType.DATE)
-    private Date createDate;
+    private Date createdate;
 
 //    @Column(name = "Payment_ID")
 //    private Long paymentId;
 
-    @Column(name = "User_ID")
-    private Long userId;
+//    @Column(name = "User_ID")
+//    private Long userId;
 
     @Column(name = "Status")
-    private String status;
+    private Boolean status;
 
 //    @JoinColumn(name = "Tours_id", referencedColumnName = "Tours_id")
 //    private Tours tours;
