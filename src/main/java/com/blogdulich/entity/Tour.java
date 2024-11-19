@@ -17,7 +17,7 @@ import lombok.Data;
 public class Tour {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_Tour")
+	@Column(name = "Tours_id")
 	private Long ID_Tour;
 	
 	@Column(name = "Username")

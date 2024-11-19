@@ -1,46 +1,62 @@
 package com.blogdulich.entity;
-import javax.persistence.*;
+
 import java.util.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Bookings")
+@Table(name = "Booking")
 public class Booking{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Booking_ID")
-    private Long bookingId;
+    private String bookingid;
 
-    @Column(name = "Created_By")
-    private String createdBy;
+    @Column(name = "User_ID")
+    private String userid;
+    
+    @Column(name = "Tour_ID")
+    private String tourid;
 
     @Column(name = "Create_Date")
     @Temporal(TemporalType.DATE)
-    private Date createDate;
+    private Date createdate;
 
 //    @Column(name = "Payment_ID")
 //    private Long paymentId;
 
-    @Column(name = "User_ID")
-    private Long userId;
+//    @Column(name = "User_ID")
+//    private Long userId;
 
     @Column(name = "Status")
-    private String status;
+    private Boolean status;
 
-    @JoinColumn(name = "Tours_id", referencedColumnName = "Tours_id")
-    private Tours tours;
-    
-    @JoinColumn(name = "User_id", referencedColumnName = "User_id")
-    private User user;
-    
-    @JoinColumn(name = "Payment_id", referencedColumnName = "Payment_id")
-    private Payment payment;
-    
-    @JoinColumn(name = "PersonBooking_id", referencedColumnName = "PersonBooking_id")
-    private PersonBooking personbooking;
-    
-    @JoinColumn(name = "Schedule_id", referencedColumnName = "Schedule_id")
-    private Schedule schedule;
+//    @JoinColumn(name = "Tours_id", referencedColumnName = "Tours_id")
+//    private Tours tours;
+//    
+//    @JoinColumn(name = "User_id", referencedColumnName = "User_id")
+//    private User user;
+//    
+//    @JoinColumn(name = "Payment_id", referencedColumnName = "Payment_id")
+//    private Payment payment;
+//    
+//    @JoinColumn(name = "PersonBooking_id", referencedColumnName = "PersonBooking_id")
+//    private PersonBooking personbooking;
+//    
+//    @JoinColumn(name = "Schedule_id", referencedColumnName = "Schedule_id")
+//    private Schedule schedule;
+}
