@@ -1,5 +1,6 @@
 ﻿CREATE DATABASE MangXaHoi_DuLich_beta
 USE MangXaHoi_DuLich_beta
+GO
 
 CREATE TABLE Account (  -- Bảng lưu thông tin tài khoản người dùng
     User_id INT PRIMARY KEY IDENTITY,  -- ID tự động tăng của tài khoản
@@ -112,13 +113,7 @@ CREATE TABLE Booking (  -- Bảng đặt tour
     FOREIGN KEY (User_id) REFERENCES Account(User_id)  -- Liên kết với bảng Account
 );
 
-CREATE TABLE BookingNotification (  -- Bảng lưu thông báo về đặt tour
-    BookingNotification_id INT PRIMARY KEY IDENTITY,  -- ID tự động tăng của thông báo
-    Create_time DATETIME,  -- Thời gian tạo thông báo
-    Notification_type NVARCHAR(50),  -- Loại thông báo (ví dụ: xác nhận, hủy, v.v.)
-    Booking_id INT,  -- ID của đặt tour
-    FOREIGN KEY (Booking_id) REFERENCES Booking(Booking_id)  -- Liên kết với bảng Booking
-);
+
 
 CREATE TABLE BookingCancel (  -- Bảng lưu lý do hủy đặt tour
     BookingCancel_id INT PRIMARY KEY IDENTITY,  -- ID tự động tăng của hủy đặt tour
@@ -213,7 +208,7 @@ CREATE TABLE Favorite (  -- Bảng lưu thông tin tour yêu thích
 
 CREATE TABLE Voucher (  -- Bảng lưu thông tin voucher
     Voucher_id INT PRIMARY KEY IDENTITY,  -- ID tự động tăng của voucher
-    Percents FLOAT,  -- Phần trăm giảm giá
+    Percent FLOAT,  -- Phần trăm giảm giá
     Quantity INT,  -- Số lượng voucher có sẵn
     Time_start DATETIME,  -- Thời gian bắt đầu có hiệu lực
     Time_end DATETIME,  -- Thời gian hết hạn
