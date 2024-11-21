@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách Tour</title>
+    <style>
+/* Reset margin và padding */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* Layout chung */
+.container-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 90%;
+    margin: 20px auto;
+    align-items: flex-start; /* Căn chỉnh hàng trên cùng */
+}
+
+/* Sidebar container */
+.sidebar {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    flex-shrink: 0;
+    margin-top: 0; /* Xóa khoảng cách thừa */
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    color: #e63946;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e63946;
+    padding-bottom: 5px;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-list li {
+    margin-bottom: 10px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu-list a:hover {
+    color: #e63946;
+}
+
+.menu-list a::before {
+    content: '►'; /* Thêm biểu tượng trước mỗi mục */
+    color: #e63946;
+    font-size: 14px;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.menu-list a:hover::before {
+    transform: translateX(5px); /* Hiệu ứng di chuyển icon khi hover */
+}
+
+/* Main container */
+.container {
+    width: 75%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tour-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tour-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e63946;
+    margin: 0;
+}
+
+.tour-date {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.tour-description {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.btn-read-more {
+    background-color: #e63946;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+}
+
+.btn-read-more:hover {
+    background-color: #d32f2f;
+}
+
+    </style>
+</head>
+<body>      
+<h1 class="header">Danh sách các Tour</h1>
+    <div class="container-wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Danh mục</h2>
+            <ul class="menu-list">
+                <li><a href="#">Danh sách tour</a></li>
+                <li><a href="#">Tour nổi bật</a></li>
+                <li><a href="#">Kinh nghiệm du lịch</a></li>
+                <li><a href="#">Điểm đến nổi bật</a></li>
+                <li><a href="#">Ẩm thực</a></li>
+                <li><a href="#">Khách sạn, Resort</a></li>
+                </ul>
+        </div>
+
+        <!-- Main content -->
+        <div class="container">
+            <div class="tour-list">
+                <!-- Loop qua danh sách tour -->
+                <div class="tour-item" th:each="tour : ${tours}">
+                    <p class="tour-title" th:text="${tour.title}"></p>
+                    <p class="tour-date" th:text="${tour.departure}"></p>
+                    <p class="tour-description" th:text="${tour.description}"></p>
+                    <a href="#" class="btn-read-more">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
