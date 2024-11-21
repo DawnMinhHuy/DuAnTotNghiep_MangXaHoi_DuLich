@@ -1,0 +1,151 @@
+/* Resetting defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Main content area */
+.main-content {
+    margin-left: 240px; /* Leave space for the sidebar */
+    padding: 20px;
+    background-color: #f9fafb; /* Light background for better contrast */
+}
+
+/* User List Section */
+#user-list-section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for a polished look */
+    overflow: hidden;
+}
+
+/* Table container */
+.table-container {
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    border: 1px solid #ddd; /* Add a subtle border */
+    background-color: #fff;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border-radius: 12px; /* Ensure corners match container */
+    overflow: hidden; /* Clip content at rounded edges */
+}
+
+/* Table headers */
+thead th {
+    padding: 14px 12px;
+    background-color: #f4f6f8;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+    cursor: pointer;
+}
+
+thead th:hover {
+    background-color: #e9ecef; /* Subtle hover effect */
+}
+
+/* Table rows */
+tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease-in-out;
+}
+
+tbody tr:hover {
+    background-color: #f7f9fc; /* Light hover effect for rows */
+}
+
+tbody td {
+    padding: 12px 10px;
+    font-size: 14px;
+    color: #555;
+    vertical-align: middle;
+}
+
+/* Images in table */
+tbody td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+/* Buttons in action column */
+button.edit-btn,
+button.delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button.edit-btn {
+    background-color: #4caf50; /* Green */
+}
+
+button.delete-btn {
+    background-color: #f44336; /* Red */
+}
+
+button.edit-btn:hover {
+    background-color: #45a049;
+}
+
+button.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Search bar and controls */
+.table-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.table-controls label {
+    font-size: 14px;
+    margin-right: 10px;
+    color: #555;
+}
+
+.table-controls input {
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 250px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.table-controls input:focus {
+    outline: none;
+    border-color: #4caf50; /* Match edit button color */
+}
+
+/* Add hover effects to search bar */
+.table-controls input:hover {
+    border-color: #aaa;
+}
+
+/* Alternate row styling for contrast */
+tbody tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
