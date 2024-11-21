@@ -1,28 +1,34 @@
 package com.blogdulich.entity;
-import javax.persistence.*;
+
+
+import org.apache.catalina.User;
+import org.springframework.scheduling.annotation.Scheduled;
 
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.awt.event.PaintEvent;
 import java.util.Date;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Bookings")
+@Table(name = "Booking")
 public class Booking{
 
     @Id
-    @GeneratedValue(strategy = Generated.IDENTITY)
-    @Column(name = "Booking_ID")
+    @Column(name = "Booking_id")
     private Long bookingId;
 
     @Column(name = "Created_By")
@@ -48,10 +54,9 @@ public class Booking{
     private User user;
     
     @JoinColumn(name = "Payment_id", referencedColumnName = "Payment_id")
-    private Payment payment;
+    private PaintEvent payment;
     
-    @JoinColumn(name = "PersonBooking_id", referencedColumnName = "PersonBooking_id")
-    private PersonBooking personbooking;
-    
+
     @JoinColumn(name = "Schedule_id", referencedColumnName = "Schedule_id")
-    private Schedule schedule;
+    private Scheduled schedule;
+}
