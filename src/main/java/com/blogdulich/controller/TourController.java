@@ -5,6 +5,7 @@ import com.blogdulich.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class TourController {
 
     @GetMapping("/tours")
     public String listTours(Model model) {
-        List<Tour> tours = tourService.getAllTours();
+        List<Tour> tours = tourService.findAll();
         model.addAttribute("tours", tours);
         return "Tour/list"; 
     }

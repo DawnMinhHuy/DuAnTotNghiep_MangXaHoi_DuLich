@@ -1,95 +1,47 @@
 package com.blogdulich.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
+import java.sql.Date;
 import java.time.LocalDateTime;
 
+import org.apache.catalina.User;
+
+@Data
 @Entity
-@Table(name = "tour")
+@Table(name = "Tour")
 public class Tour {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int tourId;
-
+    @Column(name = "Tour_id")
+    private Long tourId;
+    
+    @Column(name = "Title")
     private String title;
+    
+    @Column(name = " Description")
     private String description;
+    
+    @Column(name = "Destination")
     private String destination;
+    
+    @Column(name = "Departure")
     private String departure;
+    
+    @Column(name = "is_activated")
     private boolean isActivated;
-    private int createdBy;
-    private LocalDateTime createdAt;
-    private LocalDateTime modifiedAt;
-
-    // Getters and Setters
-    public int getTourId() {
-        return tourId;
-    }
-
-    public void setTourId(int tourId) {
-        this.tourId = tourId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public String getDeparture() {
-        return departure;
-    }
-
-    public void setDeparture(String departure) {
-        this.departure = departure;
-    }
-
-    public boolean isActivated() {
-        return isActivated;
-    }
-
-    public void setActivated(boolean activated) {
-        isActivated = activated;
-    }
-
-    public int getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(int createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public void setModifiedAt(LocalDateTime modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
+    
+//    @ManyToOne
+//    @JoinColumn(name = "User_id")
+//    private User userId;
+    
+    @Temporal(TemporalType.DATE)
+    @Column(name = "Created_at")
+    private Date createdAt;
+    
+    @Temporal(TemporalType.DATE)
+    @Column(name = "Modified_at")
+    private Date modifiedAt;
 }
