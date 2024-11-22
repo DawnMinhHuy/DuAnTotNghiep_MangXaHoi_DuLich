@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Schedule Management</title>
+    <link rel="stylesheet" href="stylist.css">
+    <link href="dist/index.global.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sidebar for Navigation -->
+    <div id="sidebar-placeholder"></div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Header -->
+        <header>
+            <h1>Schedule Management</h1>
+            <p>Welcome, Admin! Manage your schedules here.</p>
+        </header>
+
+        <!-- Calendar Section -->
+        <section id="calendar-section">
+            <h2>Calendar</h2>
+            <div id="calendar"></div>
+        </section>
+
+        <!-- Event Form Section -->
+        <section id="event-form-section">
+            <h2>Add/Edit Schedule</h2>
+            <form id="schedule-form">
+                <label for="schedule-title">Schedule Title:</label>
+                <input type="text" id="schedule-title" name="schedule-title" required>
+
+                <label for="children-price">Children's Price:</label>
+                <input type="number" id="children-price" name="children-price" step="0.01" required>
+
+                <label for="adult-price">Adult Price:</label>
+                <input type="number" id="adult-price" name="adult-price" step="0.01" required>
+
+                <label for="start-date">Start Date & Time:</label>
+                <input type="datetime-local" id="start-date" name="start-date" required>
+
+                <label for="end-date">End Date & Time:</label>
+                <input type="datetime-local" id="end-date" name="end-date" required>
+
+                <button type="submit">Save Schedule</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- FullCalendar Initialization Script -->
+    <script src="dist/index.global.min.js"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const calendarEl = document.getElementById('calendar');
+    let isStartDateSet = false; // Track whether the start date is set
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: '/REST/schedule', // Load events from backend
+        eventClick: function(info) {
+            // Populate the form with the selected event data for editing
+            const schedule = info.event.extendedProps;
+            document.getElementById('schedule-title').value = info.event.title;
+            document.getElementById('children-price').value = schedule.childrenPrice;
+            document.getElementById('adult-price').value = schedule.adultPrice;
+            document.getElementById('start-date').value = info.event.start.toISOString().slice(0, -1);
+            document.getElementById('end-date').value = info.event.end.toISOString().slice(0, -1);
+
+            // Attach event ID to the form for updating
+            document.getElementById('schedule-form').dataset.scheduleId = info.event.id;
+        },
+        dateClick: function(info) {
+            if (!isStartDateSet) {
+                // First click: set the start date
+                document.getElementById('start-date').value = info.dateStr + "T00:00";
+                isStartDateSet = true; // Update the state
+            } else {
+                // Second click: set the end date
+                document.getElementById('end-date').value = info.dateStr + "T23:59";
+                isStartDateSet = false; // Reset the state for the next interaction
+            }
+
+            // Clear any previous schedule ID when setting new dates
+            delete document.getElementById('schedule-form').dataset.scheduleId;
+        }
+    });
+
+    calendar.render();
+
+    // Submit form handler for creating or updating a schedule
+    document.getElementById('schedule-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const scheduleId = form.dataset.scheduleId;
+        const scheduleData = {
+            title: document.getElementById('schedule-title').value,
+            childrenPrice: parseFloat(document.getElementById('children-price').value),
+            adultPrice: parseFloat(document.getElementById('adult-price').value),
+            startDate: document.getElementById('start-date').value,
+            endDate: document.getElementById('end-date').value
+        };
+
+        const requestOptions = {
+            method: scheduleId ? 'PUT' : 'POST', // Use PUT for updating, POST for creating
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(scheduleData)
+        };
+
+        fetch(`/REST/schedule${scheduleId ? '/' + scheduleId : ''}`, requestOptions)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to save schedule.');
+                }
+                return response.json();
+            })
+            .then(savedSchedule => {
+                // Refresh the calendar to show the updated data
+                calendar.refetchEvents();
+                form.reset();
+            })
+            .catch(error => console.error('Error:', error));
+    });
+});
+
+    </script>
+
+    <!-- Load Sidebar HTML and Enable Dropdown Functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("sidebar.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("sidebar-placeholder").innerHTML = data;
+
+                    // Apply dropdown toggle functionality after sidebar is loaded
+                    document.querySelectorAll(".dropdown-toggle").forEach(function (toggle) {
+                        toggle.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            const dropdown = this.parentElement;
+                            dropdown.classList.toggle("active");
+                        });
+                    });
+                })
+                .catch(error => console.error("Error loading sidebar:", error));
+        });
+    </script>
+
+    <!-- Optional: Include additional sidebar script if needed -->
+    <script src="sidebar.js"></script>
+</body>
+</html>
