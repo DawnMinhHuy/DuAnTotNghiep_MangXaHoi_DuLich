@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body ng-controller="ctrl">
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Booking Management</h1>
+  
+    <!-- Form for Adding/Editing Booking -->
+    <div class="card mb-4">
+      <div class="card-header">{{ isEditing ? 'Edit Booking' : 'Add Booking' }}</div>
+      <div class="card-body">
+        <form (submit)="addBooking()">
+          <div class="row mb-3">
+            <div class="col">
+              <label for="bookingId" class="form-label">Booking ID</label>
+              <input type="text" id="bookingId" class="form-control" [(ngModel)]="newBooking.bookingid" name="bookingid" required>
+            </div>
+            <div class="col">
+              <label for="userId" class="form-label">User ID</label>
+              <input type="text" id="userId" class="form-control" [(ngModel)]="newBooking.userid" name="userid" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="tourId" class="form-label">Tour ID</label>
+              <input type="text" id="tourId" class="form-control" [(ngModel)]="newBooking.tourid" name="tourid" required>
+            </div>
+            <div class="col">
+              <label for="createDate" class="form-label">Create Date</label>
+              <input type="date" id="createDate" class="form-control" [(ngModel)]="newBooking.createdate" name="createdate" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select id="status" class="form-control" [(ngModel)]="newBooking.status" name="status">
+              <option [value]="true">Active</option>
+              <option [value]="false">Inactive</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">{{ isEditing ? 'Update Booking' : 'Add Booking' }}</button>
+          <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Booking Table -->
+    <div class="card">
+      <div class="card-header">Booking List</div>
+      <div class="card-body">
+        <table class="table table-bordered text-center">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>User ID</th>
+              <th>Tour ID</th>
+              <th>Create Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="booking of bookings">
+              <td>{{ booking.bookingid }}</td>
+              <td>{{ booking.userid }}</td>
+              <td>{{ booking.tourid }}</td>
+              <td>{{ booking.createdate }}</td>
+              <td>{{ booking.status ? 'Active' : 'Inactive' }}</td>
+              <td>
+                <button class="btn btn-warning btn-sm" (click)="editBooking(booking)">Edit</button>
+                <button class="btn btn-danger btn-sm" (click)="deleteBooking(booking.bookingid)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="BookingAngularJS.js"></script>
+</body>
+</html>

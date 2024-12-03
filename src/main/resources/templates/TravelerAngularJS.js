@@ -1,0 +1,73 @@
+let host = "http://localhost:8080/REST";
+const app = angular.module("app",[]);
+app.controller("ctrl", function($scope,$http){
+    $scope.form = {}
+    $scope.items = []
+    $scope.reset = function(){
+        $scope.form = {gender : true}
+        $scope.load_all();
+    }
+    $scope.load_all = function(){
+        var url =`${host}/traveler`;
+        $http.get(url).then(response => {
+            $scope.items = response.data;
+            $scope.showCreateButton = true; // Hiển thị nút Create mặc định
+            $scope.showUpdateButton = false;
+            $scope.showDeleteButton = false;
+            $scope.showResetButton = true;
+            console.log("Success",response)
+        }).catch(error => {
+            console.log("Error",error)
+        });
+    }
+    $scope.edit = function(travelerid){
+        var url = `${host}/traveler/${travelerid}`;
+        $http.get(url).then(response => {
+            $scope.form = response.data;
+            // $scope.key = key;
+            $scope.showCreateButton = false; // Hiển thị nút Create mặc định
+            $scope.showUpdateButton = true;
+            $scope.showDeleteButton = true;
+            $scope.showResetButton = true;
+            console.log("Success",response)
+        }).catch(error => {
+            console.log("Error",error)
+        });
+    }
+    $scope.create = function(){
+        var item = angular.copy($scope.form);
+        var url = `${host}/traveler`;
+        $http.post(url, item).then(response => {
+            $scope.items.push(item);
+            $scope.reset();
+            console.log("Success",response)
+        }).catch(error => {
+            console.log("Error",error)
+        });
+    }
+    $scope.update = function(){
+        var item = angular.copy($scope.form);
+        var url = `${host}/traveler/${$scope.form.travelerid}`;
+        $http.put(url,item).then(response => {
+            var index = $scope.items.findIndex(item => item.travelerid == $scope.form.travelerid)
+            $scope.items[index] = response.data;
+            console.log("Success",response)
+        }).catch(error => {
+            console.log("Error",error)
+        });
+    }
+    $scope.delete = function(travelerid){
+        var url = `${host}/traveler/${travelerid}`;
+        $http.delete(url).then(response => {
+            var index = $scope.items.findIndex(item => item.travelerid == travelerid)
+            $scope.items.splice(index,1);
+            $scope.reset();
+            console.log("Success",response)
+        }).catch(error => {
+            console.log("Error",error)
+        });
+    }
+
+    $scope.reset();
+    // $scope.load_all();
+});

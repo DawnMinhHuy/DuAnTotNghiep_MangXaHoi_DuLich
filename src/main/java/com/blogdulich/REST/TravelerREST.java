@@ -50,42 +50,44 @@
 //}
 package com.blogdulich.REST;
 
-import com.blogdulich.Entity.Booking;
-import com.blogdulich.Service.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import com.blogdulich.Entity.Traveler;
+import com.blogdulich.Service.TravelerService;
 
 import java.util.List;
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/REST/bookings")
-public class BookingREST {
+@RequestMapping("/REST/traveler")
+public class TravelerREST {
 
     @Autowired
-    private BookingService bookingService;
+    private TravelerService travelerService;
 
     @GetMapping
-    public List<Booking> getAllBookings() {
-        return bookingService.findAll();
+    public List<Traveler> getAllTraveler() {
+        return travelerService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Booking getBookingById(@PathVariable("id") String bookingId) {
-        return bookingService.findById(bookingId);
+    public Traveler getTravelerById(@PathVariable("id") Long travelerId) {
+        return travelerService.findById(travelerId);
     }
 
     @PostMapping
-    public Booking createBooking(@RequestBody Booking booking) {
-        return bookingService.save(booking);
+    public Traveler createTraveler(@RequestBody Traveler traveler) {
+        return travelerService.save(traveler);
     }
     
     @PutMapping("/{id}")
-    public Booking updateBookingById(@PathVariable("id") String bookingid, @RequestBody Booking booking) {
-    	return bookingService.save(booking);
+    public Traveler updateTravelerById(@PathVariable("id") Long travelerid, @RequestBody Traveler traveler) {
+    	return travelerService.save(traveler);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBooking(@PathVariable("id") String bookingId) {
-        bookingService.deleteById(bookingId);
+    public void deleteTraveler(@PathVariable("id") Long travelerId) {
+        travelerService.deleteById(travelerId);
     }
 }

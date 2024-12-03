@@ -7,42 +7,44 @@ import org.springframework.stereotype.Service;
 
 import com.blogdulich.DAO.BookingDAO;
 import com.blogdulich.DAO.DAO;
+import com.blogdulich.DAO.PaymentDAO;
 import com.blogdulich.Entity.Booking;
+import com.blogdulich.Entity.Payment;
 
 @Service
-public class BookingService extends DAO<Booking, String> {
+public class PaymentService extends DAO<Payment, Long> {
 
 	@Autowired
-	private BookingDAO bookingDao;
+	private PaymentDAO paymentDao;
 	
 	@Override
-	public List<Booking> findAll() {
+	public List<Payment> findAll() {
 		// TODO Auto-generated method stub
-		return bookingDao.findAll();
+		return paymentDao.findAll();
 	}
 
 	@Override
-	public Booking findById(String id) {
+	public Payment findById(Long id) {
 		// TODO Auto-generated method stub
-		return bookingDao.findById(id).get();
+		return paymentDao.findById(id).get();
 	}
 
 	@Override
-	public Booking save(Booking booking) {
+	public Payment save(Payment payment) {
 		// TODO Auto-generated method stub
-		return bookingDao.save(booking);
+		return paymentDao.save(payment);
 	}
 
 	@Override
-	public void deleteById(String id) {
+	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
-		bookingDao.deleteById(id);
+		paymentDao.deleteById(id);
 	}
 
 	@Override
-	public boolean existsBy(String id) {
+	public boolean existsBy(Long id) {
 		// TODO Auto-generated method stub
-		return bookingDao.existsById(id);
+		return paymentDao.existsById(id);
 	}
 
 }

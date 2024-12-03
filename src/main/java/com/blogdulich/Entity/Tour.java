@@ -1,4 +1,4 @@
-package com.blogdulich.entity;
+package com.blogdulich.Entity;
 
 import java.io.File;
 import java.util.Date;

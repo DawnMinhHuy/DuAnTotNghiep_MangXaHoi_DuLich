@@ -51,6 +51,7 @@
 package com.blogdulich.REST;
 
 import com.blogdulich.Entity.Booking;
+import com.blogdulich.Entity.Payment;
 import com.blogdulich.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -58,34 +59,34 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/REST/bookings")
-public class BookingREST {
+@RequestMapping("/REST/payment")
+public class PaymentREST {
 
     @Autowired
-    private BookingService bookingService;
+    private PaymentService paymentService;
 
     @GetMapping
-    public List<Booking> getAllBookings() {
-        return bookingService.findAll();
+    public List<Payment> getAllPayment() {
+        return paymentService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Booking getBookingById(@PathVariable("id") String bookingId) {
-        return bookingService.findById(bookingId);
+    public Payment getPaymentById(@PathVariable("id") Long paymentId) {
+        return paymentService.findById(paymentId);
     }
 
     @PostMapping
-    public Booking createBooking(@RequestBody Booking booking) {
-        return bookingService.save(booking);
+    public Payment createPayment(@RequestBody Payment payment) {
+        return paymentService.save(payment);
     }
     
     @PutMapping("/{id}")
-    public Booking updateBookingById(@PathVariable("id") String bookingid, @RequestBody Booking booking) {
-    	return bookingService.save(booking);
+    public Payment updatePaymentById(@PathVariable("id") Long paymentId, @RequestBody Payment payment) {
+    	return paymentService.save(payment);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBooking(@PathVariable("id") String bookingId) {
-        bookingService.deleteById(bookingId);
+    public void deleteBooking(@PathVariable("id") Long paymentId) {
+    	paymentService.deleteById(paymentId);
     }
 }
