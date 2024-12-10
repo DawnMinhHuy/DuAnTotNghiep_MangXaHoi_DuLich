@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="BookingAgularJS.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .action-buttons button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body ng-controller="ctrl">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Booking Management</h2>
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Booking ID</th>
+                        <th>Status</th>
+                        <th>Note</th>
+                        <th>Created Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ item.bookingId }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.note }}</td>
+                        <td>{{ item.createddate | date:'yyyy-MM-dd' }}</td>
+                        <td class="action-buttons">
+                            <button class="btn btn-info btn-sm" ng-click="edit(item.bookingid)">Edit</button>
+                            <button class="btn btn-danger btn-sm" ng-click="delete(item.bookingid)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

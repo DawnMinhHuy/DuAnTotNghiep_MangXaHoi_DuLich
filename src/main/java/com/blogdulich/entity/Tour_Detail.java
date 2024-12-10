@@ -17,6 +17,9 @@ public class Tour_Detail implements Serializable {
 
     @Column(name = "Image")
     private String image;
+    
+    @Column(name = "Title")
+    private String title;
 
     @Column(name = "Vehicle")
     private String vehicle;
@@ -27,7 +30,7 @@ public class Tour_Detail implements Serializable {
     @Column(name = "Policy")
     private String policy;
 
-    @ManyToOne
+	@ManyToOne
     @JoinColumn(name = "Tours_id", referencedColumnName = "Tours_id", nullable = false)
     private Tours tours;
 
@@ -36,6 +39,14 @@ public class Tour_Detail implements Serializable {
     private Places places;
 
     // Getters and Setters
+    public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+    
     public Integer getTourDetailId() {
         return tourDetailId;
     }

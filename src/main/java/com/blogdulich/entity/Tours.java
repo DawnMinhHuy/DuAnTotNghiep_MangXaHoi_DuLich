@@ -3,6 +3,9 @@ package com.blogdulich.entity;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import lombok.*;
+
+
 
 @Entity
 @Table(name = "Tours")
@@ -25,9 +28,6 @@ public class Tours implements Serializable {
 
     @Column(name = "is_activated")
     private Boolean isActivated;
-
-    @Column(name = "Title")
-    private String title;
 
     @Column(name = "Destination")
     private String destination;
@@ -80,13 +80,6 @@ public class Tours implements Serializable {
         this.isActivated = isActivated;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public String getDestination() {
         return destination;
