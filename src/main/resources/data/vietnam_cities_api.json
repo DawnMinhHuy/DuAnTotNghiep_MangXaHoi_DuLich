@@ -1,0 +1,507 @@
+[
+    {
+      "id": 1,
+      "name": "Bà Rịa",
+      "type": "Thành phố",
+      "code": "BR"
+    },
+    {
+      "id": 2,
+      "name": "Bạc Liêu",
+      "type": "Thành phố",
+      "code": "BL"
+    },
+    {
+      "id": 3,
+      "name": "Bảo Lộc",
+      "type": "Thành phố",
+      "code": "BLT"
+    },
+    {
+      "id": 4,
+      "name": "Bắc Giang",
+      "type": "Thành phố",
+      "code": "BG"
+    },
+    {
+      "id": 5,
+      "name": "Bắc Kạn",
+      "type": "Thành phố",
+      "code": "BK"
+    },
+    {
+      "id": 6,
+      "name": "Bắc Ninh",
+      "type": "Thành phố",
+      "code": "BN"
+    },
+    {
+      "id": 7,
+      "name": "Bến Tre",
+      "type": "Thành phố",
+      "code": "BT"
+    },
+    {
+      "id": 8,
+      "name": "Biên Hòa",
+      "type": "Thành phố",
+      "code": "BH"
+    },
+    {
+      "id": 9,
+      "name": "Buôn Ma Thuột",
+      "type": "Thành phố",
+      "code": "BMT"
+    },
+    {
+      "id": 10,
+      "name": "Cà Mau",
+      "type": "Thành phố",
+      "code": "CM"
+    },
+    {
+      "id": 11,
+      "name": "Cam Ranh",
+      "type": "Thành phố",
+      "code": "CR"
+    },
+    {
+      "id": 12,
+      "name": "Cao Bằng",
+      "type": "Thành phố",
+      "code": "CB"
+    },
+    {
+      "id": 13,
+      "name": "Cao Lãnh",
+      "type": "Thành phố",
+      "code": "CL"
+    },
+    {
+      "id": 14,
+      "name": "Cẩm Phả",
+      "type": "Thành phố",
+      "code": "CP"
+    },
+    {
+      "id": 15,
+      "name": "Châu Đốc",
+      "type": "Thành phố",
+      "code": "CD"
+    },
+    {
+      "id": 16,
+      "name": "Đà Lạt",
+      "type": "Thành phố",
+      "code": "DL"
+    },
+    {
+      "id": 17,
+      "name": "Điện Biên Phủ",
+      "type": "Thành phố",
+      "code": "DBP"
+    },
+    {
+      "id": 18,
+      "name": "Đông Hà",
+      "type": "Thành phố",
+      "code": "DH"
+    },
+    {
+      "id": 19,
+      "name": "Đồng Hới",
+      "type": "Thành phố",
+      "code": "DH"
+    },
+    {
+      "id": 20,
+      "name": "Đồng Xoài",
+      "type": "Thành phố",
+      "code": "DX"
+    },
+    {
+        "id": 21,
+        "name": "Phan Thiết",
+        "type": "Thành phố",
+        "code": "PT"
+    },
+    {
+        "id": 22,
+        "name": "Phan Rang - Tháp Chàm",
+        "type": "Thành phố",
+        "code": "PRTC"
+    },
+    {
+        "id": 23,
+        "name": "Ninh Bình",
+        "type": "Thành phố",
+        "code": "NB"
+    },
+    {
+        "id": 24,
+        "name": "Nha Trang",
+        "type": "Thành phố",
+        "code": "NT"
+    },
+    {
+        "id": 25,
+        "name": "Nam Định",
+        "type": "Thành phố",
+        "code": "ND"
+    },
+    {
+        "id": 26,
+        "name": "Mỹ Tho",
+        "type": "Thành phố",
+        "code": "MT"
+    },
+    {
+        "id": 27,
+        "name": "Móng Cái",
+        "type": "Thành phố",
+        "code": "MC"
+    },
+    {
+        "id": 28,
+        "name": "Long Xuyên",
+        "type": "Thành phố",
+        "code": "LX"
+    },
+    {
+        "id": 29,
+        "name": "Lào Cai",
+        "type": "Thành phố",
+        "code": "LC"
+    },
+    {
+        "id": 30,
+        "name": "Lạng Sơn",
+        "type": "Thành phố",
+        "code": "LS"
+    },
+    {
+        "id": 31,
+        "name": "Lai Châu",
+        "type": "Thành phố",
+        "code": "LC"
+    },
+    {
+        "id": 32,
+        "name": "Kon Tum",
+        "type": "Thành phố",
+        "code": "KT"
+    },
+    {
+        "id": 33,
+        "name": "Hưng Yên",
+        "type": "Thành phố",
+        "code": "HY"
+    },
+    {
+        "id": 34,
+        "name": "Huế",
+        "type": "Thành phố",
+        "code": "H"
+    },
+    {
+        "id": 35,
+        "name": "Hội An",
+        "type": "Thành phố",
+        "code": "HA"
+    },
+    {
+        "id": 36,
+        "name": "Hòa Bình",
+        "type": "Thành phố",
+        "code": "HB"
+    },
+    {
+        "id": 37,
+        "name": "Hải Dương",
+        "type": "Thành phố",
+        "code": "HD"
+    },
+    {
+        "id": 38,
+        "name": "Hà Tĩnh",
+        "type": "Thành phố",
+        "code": "HT"
+    },
+    {
+        "id": 39,
+        "name": "Hà Tiên",
+        "type": "Thành phố",
+        "code": "HT"
+    },
+    {
+        "id": 40,
+        "name": "Hạ Long",
+        "type": "Thành phố",
+        "code": "HL"
+    },
+    {
+        "id": 41,
+        "name": "Hà Giang",
+        "type": "Thành phố",
+        "code": "HG"
+    },
+    {
+        "id": 42,
+        "name": "Phủ Lý",
+        "type": "Thành phố",
+        "code": "PL"
+      },
+      {
+        "id": 43,
+        "name": "Phúc Yên",
+        "type": "Thành phố",
+        "code": "PY"
+      },
+      {
+        "id": 44,
+        "name": "Pleiku",
+        "type": "Thành phố",
+        "code": "PLK"
+      },
+      {
+        "id": 45,
+        "name": "Quảng Ngãi",
+        "type": "Thành phố",
+        "code": "QN"
+      },
+      {
+        "id": 46,
+        "name": "Quy Nhơn",
+        "type": "Thành phố",
+        "code": "QN"
+      },
+      {
+        "id": 47,
+        "name": "Rạch Giá",
+        "type": "Thành phố",
+        "code": "RG"
+      },
+      {
+        "id": 48,
+        "name": "Sa Đéc",
+        "type": "Thành phố",
+        "code": "SD"
+      },
+      {
+        "id": 49,
+        "name": "Sầm Sơn",
+        "type": "Thành phố",
+        "code": "SS"
+      },
+      {
+        "id": 50,
+        "name": "Sóc Trăng",
+        "type": "Thành phố",
+        "code": "ST"
+      },
+      {
+        "id": 51,
+        "name": "Sơn La",
+        "type": "Thành phố",
+        "code": "SL"
+      },
+      {
+        "id": 52,
+        "name": "Sông Công",
+        "type": "Thành phố",
+        "code": "SC"
+      },
+      {
+        "id": 53,
+        "name": "Tam Điệp",
+        "type": "Thành phố",
+        "code": "TD"
+      },
+      {
+        "id": 54,
+        "name": "Tam Kỳ",
+        "type": "Thành phố",
+        "code": "TK"
+      },
+      {
+        "id": 55,
+        "name": "Tân An",
+        "type": "Thành phố",
+        "code": "TA"
+      },
+      {
+        "id": 56,
+        "name": "Tây Ninh",
+        "type": "Thành phố",
+        "code": "TN"
+      },
+      {
+        "id": 57,
+        "name": "Thái Bình",
+        "type": "Thành phố",
+        "code": "TB"
+      },
+      {
+        "id": 58,
+        "name": "Thái Nguyên",
+        "type": "Thành phố",
+        "code": "TNG"
+      },
+      {
+        "id": 59,
+        "name": "Thanh Hóa",
+        "type": "Thành phố",
+        "code": "TH"
+      },
+      {
+        "id": 60,
+        "name": "Thủ Dầu Một",
+        "type": "Thành phố",
+        "code": "TDM"
+      },
+      {
+        "id": 61,
+        "name": "Trà Vinh",
+        "type": "Thành phố",
+        "code": "TV"
+      },
+      {
+        "id": 62,
+        "name": "Tuy Hòa",
+        "type": "Thành phố",
+        "code": "TH"
+      },
+      {
+        "id": 63,
+        "name": "Tuyên Quang",
+        "type": "Thành phố",
+        "code": "TQ"
+      },
+      {
+        "id": 64,
+        "name": "Uông Bí",
+        "type": "Thành phố",
+        "code": "UB"
+      },
+      {
+        "id": 65,
+        "name": "Vị Thanh",
+        "type": "Thành phố",
+        "code": "VTH"
+      },
+      {
+        "id": 66,
+        "name": "Việt Trì",
+        "type": "Thành phố",
+        "code": "VT"
+      },
+      {
+        "id": 67,
+        "name": "Vinh",
+        "type": "Thành phố",
+        "code": "V"
+      },
+      {
+        "id": 68,
+        "name": "Vĩnh Long",
+        "type": "Thành phố",
+        "code": "VL"
+      },
+      {
+        "id": 69,
+        "name": "Vĩnh Yên",
+        "type": "Thành phố",
+        "code": "VY"
+      },
+      {
+        "id": 70,
+        "name": "Vũng Tàu",
+        "type": "Thành phố",
+        "code": "VT"
+      },
+      {
+        "id": 71,
+        "name": "Yên Bái",
+        "type": "Thành phố",
+        "code": "YB"
+      },
+      {
+        "id": 72,
+        "name": "Thuận An",
+        "type": "Thành phố",
+        "code": "TA"
+      },
+      {
+        "id": 73,
+        "name": "Dĩ An",
+        "type": "Thành phố",
+        "code": "DA"
+      },
+      {
+        "id": 74,
+        "name": "Phú Quốc",
+        "type": "Thành phố",
+        "code": "PQ"
+      },
+      {
+        "id": 75,
+        "name": "Ngã Bảy",
+        "type": "Thành phố",
+        "code": "NB"
+      },
+      {
+        "id": 76,
+        "name": "Long Khánh",
+        "type": "Thành phố",
+        "code": "LK"
+      },
+      {
+        "id": 77,
+        "name": "Hồng Ngự",
+        "type": "Thành phố",
+        "code": "HN"
+      },
+      {
+        "id": 78,
+        "name": "Gia Nghĩa",
+        "type": "Thành phố",
+        "code": "GN"
+      },
+      {
+        "id": 79,
+        "name": "TP.Hồ Chí Minh",
+        "type": "Thành phố",
+        "code": "SG"
+      },
+      {
+        "id": 80,
+        "name": "Hà Nội",
+        "type": "Thành phố",
+        "code": "HN"
+      },
+      {
+        "id": 81,
+        "name": "Hải Phòng",
+        "type": "Thành phố",
+        "code": "HP"
+      },
+      {
+        "id": 82,
+        "name": "Đà Nẵng",
+        "type": "Thành phố",
+        "code": "DN"
+      },
+      {
+        "id": 83,
+        "name": "Cần Thơ",
+        "type": "Thành phố",
+        "code": "CT"
+      },
+      {
+        "id": 84,
+        "name": "Thủ Đức",
+        "type": "Thành phố",
+        "code": "TĐ"
+      }
+  ]
+  

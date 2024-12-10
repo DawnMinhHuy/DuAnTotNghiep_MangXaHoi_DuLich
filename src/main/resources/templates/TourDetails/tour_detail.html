@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Bundle with Popper (JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        #tourSlideshow img {
+          height: 400px; /* Hoặc bất kỳ chiều cao mong muốn */
+          object-fit: cover; /* Đảm bảo ảnh vừa khung mà không bị méo */
+        }
+      </style>
+      
+<body>
+    <div class="container mt-5">
+
+        <div class="container mt-4">
+            <!-- Slideshow (Carousel) -->
+            <div id="tourSlideshow" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="img/anh-phong-canh-65-1.jpg" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="img/b2301b0805d98058357a78e39c12d0b8.jpg" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="img/hills-2836301_1280.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#tourSlideshow" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#tourSlideshow" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          
+            <!-- Tiêu đề -->
+            <h1 class="mt-4">Tour Du Lịch Phú Quốc - Thiên Đường Nghỉ Dưỡng</h1>
+          </div>
+        
+        <div class="container mt-4">
+            <!-- Thông tin tour cơ bản -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <p><strong>THỜI GIAN:</strong> 3 ngày 2 đêm</p>
+                <p><strong>ĐIỂM XUẤT PHÁT:</strong> TP. Hồ Chí Minh</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>PHƯƠNG TIỆN:</strong> Hàng không Vietnam Airlines</p>
+                <p><strong>ĐIỂM ĐẾN:</strong> Phú Quốc</p>
+              </div>
+            </div>
+          
+            <!-- Bảng giá tour -->
+            <div class="table-responsive">
+              <table class="table table-bordered text-center" style="background-color: #f9f2ec;">
+                <thead>
+                  <tr>
+                    <th>KHỞI HÀNH</th>
+                    <th>MÃ TOUR</th>
+                    <th>GIÁ</th>
+                    <th>GIÁ TRẺ EM</th>
+                    <th>GIÁ EM BÉ</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>24/11/2024</td>
+                    <td>STN084-2024-03354</td>
+                    <td class="text-danger"><strong>6.879.000</strong></td>
+                    <td class="text-danger"><strong>5.379.000</strong></td>
+                    <td class="text-danger"><strong>2.124.000</strong></td>
+                    <td>
+                      <button class="btn btn-warning text-white">MUA ONLINE</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="container mt-4">
+            <!-- Phần giới thiệu tour -->
+            <h4 class="mb-3">Tour này có gì hay</h4>
+            <ul>
+              <li>Tham quan Vườn tiêu, Lò chế biến rượu Sim rừng Phú Quốc, Cơ sở nước mắm Phú Quốc.</li>
+              <li>Trải nghiệm “Cáp treo 3 dây vượt biển dài nhất thế giới tại Hòn Thơm” với tổng chiều dài 7.899,9m, thời gian di chuyển 15 phút.</li>
+              <li>Viếng Thiền Viện Trúc Lâm Hộ Quốc ngôi chùa đẹp và lớn nhất đảo ngọc.</li>
+            </ul>
+            <button class="btn btn-warning text-white mt-2">In chương trình tour</button>
+          
+            <!-- Phần hình ảnh -->
+            <div class="row mt-4">
+              <div class="col-md-4 mb-3">
+                <img src="img/hills-2836301_1280.jpg" class="img-fluid" alt="Ảnh 1">
+              </div>
+              <div class="col-md-4 mb-3">
+                <img src="img/hills-2836301_1280.jpg" class="img-fluid" alt="Ảnh 2">
+              </div>
+              <div class="col-md-4 mb-3">
+                <img src="img/hills-2836301_1280.jpg" class="img-fluid" alt="Ảnh 3">
+              </div>
+              <div class="col-md-4 mb-3">
+                <img src="img/hills-2836301_1280.jpg" class="img-fluid" alt="Ảnh 4">
+              </div>
+              <div class="col-md-4 mb-3">
+                <img src="img/hills-2836301_1280.jpg" class="img-fluid" alt="Ảnh 5">
+              </div>
+              <div class="col-md-4 mb-3">
+                <img src="img/hills-2836301_1280.jpg" class="img-fluid" alt="Ảnh 6">
+              </div>
+            </div>
+          </div>
+          
+
+        <!-- Tabs Navigation -->
+        <ul class="nav nav-tabs mt-4" id="tourDetailTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="schedule-tab" data-bs-toggle="tab" data-bs-target="#schedule" type="button" role="tab">
+              Lịch trình
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="policy-tab" data-bs-toggle="tab" data-bs-target="#policy" type="button" role="tab">
+              Chính sách
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="procedure-tab" data-bs-toggle="tab" data-bs-target="#procedure" type="button" role="tab">
+              Thủ tục
+            </button>
+          </li>
+        </ul>
+      
+        <!-- Tabs Content -->
+        <div class="tab-content mt-3" id="tourDetailTabContent">
+          <!-- Schedule Tab -->
+          <div class="tab-pane fade show active" id="schedule" role="tabpanel">
+            <h3>Lịch trình</h3>
+            <div class="accordion" id="tourSchedule">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#day1">
+                    Ngày 1: Khám phá Vinpearl Safari
+                  </button>
+                </h2>
+                <div id="day1" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    Sau bữa sáng, xe đưa đoàn đến Vinpearl Safari...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Policy Tab -->
+          <div class="tab-pane fade" id="policy" role="tabpanel">
+            <h3>Chính sách</h3>
+            <ul>
+              <li>Không hoàn hủy sau khi đăng ký.</li>
+              <li>Thay đổi lịch trình có thể áp dụng phí.</li>
+              <li>Trẻ em dưới 2 tuổi: miễn phí.</li>
+            </ul>
+          </div>
+      
+          <!-- Procedure Tab -->
+          <div class="tab-pane fade" id="procedure" role="tabpanel">
+            <h3>Thủ tục</h3>
+            <p>Để tham gia tour, quý khách cần chuẩn bị:</p>
+            <ul>
+              <li>CMND/CCCD bản gốc để làm thủ tục vé máy bay.</li>
+              <li>Giấy khai sinh bản sao cho trẻ em dưới 14 tuổi.</li>
+              <li>Hộ chiếu còn hiệu lực đối với khách nước ngoài.</li>
+            </ul>
+          </div>
+        </div>
+      </div>      
+</body>
+</html>
